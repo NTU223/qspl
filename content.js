@@ -65,9 +65,9 @@ var jsCode = function() {
     var large = 20;
     html.addEventListener('keydown', function(evt) {
       if (evt.keyCode == 39) {
-        offstSecond(evt.shiftKey ? large : small);
+        offsetSecond(evt.shiftKey ? large : small);
       } else if (evt.keyCode == 37) {
-        offstSecond(-(evt.shiftKey ? large : small));
+        offsetSecond(-(evt.shiftKey ? large : small));
       }
     });
   })();

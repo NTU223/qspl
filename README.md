@@ -1,14 +1,33 @@
 QSPL
 ====
 
-Press `Q`, `S`, `P`, `L` keys by js on March dorcel.
-More detail:
-http://www.ettoday.net/dalemon/post/12363
+安裝說明
+---
 
-It is an uncompleted project.
+1. 下載並解壓縮(如果需要的話)
+2. 開啟chrome瀏覽器，url列輸入 chrome://extensions
+3. 勾選右上角「開發人員模式」
+4. 按左上角「載入未封裝擴充功能」
+5. 選取剛下載下來的資料夾位置（該資料夾內應該包含一個manifest.json）
+6. 看片
 
-USAGE:
-After the webpage is loaded, open the browser's develop tool and then paste
-codes in `a.js` on it.  Then type `Q`, `S`, `P`, `L` keys at the webpage.
-And then you can just click the key `G` to toggle whether this four keys
-are pressing or not.
+使用說明
+----
+
+進入網站後，請在心情愉悅的時後分別敲擊鍵盤上`Q`, `S`, `P`, `L`四個按鍵。
+本插件不怕敲太多下，只怕不敲。
+
+接下來影片暫停/繼續皆由空白鍵取代
+
+另外使用者可以點選seekbar直接跳到想要的片段，也可以按下鍵盤左右鍵來快進/退10秒，
+也可以搭配shift鍵達到跳躍20秒的效果。
+
+前情提要
+----
+請參見： http://www.ettoday.net/dalemon/post/12363
+
+
+Copyright & License
+----
+沒，都沒。想用就用。
+此插件本意是練習開發chrome extension，研究js開發環境的特性與漏洞。
