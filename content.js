@@ -1,14 +1,19 @@
 var jsCode = function() {
   var html = document.getElementsByTagName('html')[0];
 
+
+  // Disable blur event handler on `window` object.
   (function() {
     var origAddEventListenerFunc = window.addEventListener;
     window.addEventListener = function(eventName, handler) {
-      if (eventName == 'blur') return handler;
+      if (eventName == 'blur') return;
       return origAddEventListenerFunc.call(window, eventName, handler);
     };
   })();
 
+
+  // Fetch the most important 4 keys and use pressing spacebar to simulate
+  // keydown/keyup them.
   (function() {
     var down = {q: null, s: null, p: null, l: null};
     var up = {q: null, s: null, p: null, l: null};
@@ -36,6 +41,8 @@ var jsCode = function() {
     });
   })();
 
+
+  // Handles events on the progress bar for seeking.
   (function() {
     var progressBar = undefined;
     var setup = function() {
@@ -52,6 +59,8 @@ var jsCode = function() {
     setup();
   })();
 
+
+  // Handles keyboard events for jumping foreword or backword.
   (function() {
     html.addEventListener('keydown', function(evt) {
       if (evt.keyCode == 39) {
@@ -62,9 +71,11 @@ var jsCode = function() {
     });
   })();
 
+
   var seekToPercent = function(p) {
     window.jwplayer().seek(window.jwplayer().getDuration() * p);
   };
+
 
   var offsetSecond = function(s) {
     console.log(window.jwplayer().getPosition());
