@@ -50,8 +50,7 @@ var jsCode = function() {
       if (p && p !== progressBar) {
         progressBar = p;
         progressBar.addEventListener('click', function(evt) {
-          console.log(evt);
-          seekToPercent(evt.clientX / progressBar.clientWidth);
+          seekToPercent(evt.offsetX / progressBar.clientWidth);
         });
       }
       window.setTimeout(setup, 500);
@@ -62,11 +61,13 @@ var jsCode = function() {
 
   // Handles keyboard events for jumping foreword or backword.
   (function() {
+    var small = 10;
+    var large = 20;
     html.addEventListener('keydown', function(evt) {
       if (evt.keyCode == 39) {
-        offsetSecond(5 + (evt.shitfKey ? 10 : 0));
+        offstSecond(evt.shiftKey ? large : small);
       } else if (evt.keyCode == 37) {
-        offsetSecond(-5 - (evt.shitfKey ? 10 : 0));
+        offstSecond(-(evt.shiftKey ? large : small));
       }
     });
   })();
@@ -78,8 +79,6 @@ var jsCode = function() {
 
 
   var offsetSecond = function(s) {
-    console.log(window.jwplayer().getPosition());
-    console.log(window.jwplayer().getPosition() + s);
     window.jwplayer().seek(window.jwplayer().getPosition() + s);
   };
 };
