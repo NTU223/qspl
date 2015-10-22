@@ -1,0 +1,13 @@
+{
+  "manifest_version" : 2,
+  "name" : "hey hey hey",
+  "version" : "0.0.1",
+  
+  "content_scripts" : [
+    {
+      "matches" : ["http://dorcel-handsoff.com/*"],
+      "js" : ["content.js"],
+      "run_at" : "document_start"
+    }
+  ]
+}
